@@ -36,6 +36,29 @@ int getMiddleIndex(vector<int> nums)
     return -1;
 }
 
+int getBetterMiddleIndex(vector<int> nums)
+{
+    int len = nums.size();
+    int leftSum = 0;
+    int totalSum = 0;
+    for (auto i : nums)
+    {
+        totalSum += i;
+    }
+
+    for (int j = 0; j < len; j++)
+    {
+        if (leftSum == totalSum - leftSum - nums[j])
+        {
+            return j;
+        }
+
+        leftSum += nums[j];
+    }
+
+    return -1;
+}
+
 int main()
 {
     vector<int> nums{4, 0};
