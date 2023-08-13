@@ -44,3 +44,5 @@ int main()
 
     cout << ans << endl;
 }
+
+// TODO: This could be optimized a bit ig
