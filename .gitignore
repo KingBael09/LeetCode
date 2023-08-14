@@ -1,7 +1,6 @@
-temp.cpp
+/.vscode
 
 *.exe
 
-/.vscode
-
-tempCodeRunnerFile.cpp
+temp*.cpp
+*.incomplete.cpp
