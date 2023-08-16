@@ -4,3 +4,5 @@
 
 temp*.cpp
 *.incomplete.cpp
+
+_extra_*.cpp
