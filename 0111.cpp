@@ -17,7 +17,7 @@ struct TreeNode
 };
 
 // Very bad method uses too much memory
-int minDepth(TreeNode *root)
+int minDepthItr(TreeNode *root)
 {
     int ans = 0;
     if (!root)
@@ -57,8 +57,35 @@ int minDepth(TreeNode *root)
     return ans;
 }
 
-// TODO: Memory can be optimized
-// Maybe recursive method can do it better
+int minDepth(TreeNode *root)
+{
+    if (root == nullptr)
+    {
+        return 0;
+    }
+
+    // check if the node is a leaf
+    if (root->left == nullptr && root->right == nullptr)
+    {
+        return 1;
+    }
+
+    int leftDepth = minDepth(root->left);
+    int rightDepth = minDepth(root->right);
+
+    if (leftDepth == 0)
+    {
+        return rightDepth + 1;
+    }
+    else if (rightDepth == 0)
+    {
+        return leftDepth + 1;
+    }
+    else
+    {
+        return min(leftDepth, rightDepth) + 1;
+    }
+}
 
 int main()
 {
