@@ -58,6 +58,7 @@ int minDepth(TreeNode *root)
 }
 
 // TODO: Memory can be optimized
+// Maybe recursive method can do it better
 
 int main()
 {
