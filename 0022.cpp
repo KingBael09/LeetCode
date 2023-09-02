@@ -48,7 +48,6 @@ vector<string> sillySolution(int n)
             "()",
         });
         return a;
-        break;
 
     case 2:
         a.assign({
@@ -56,7 +55,6 @@ vector<string> sillySolution(int n)
             "()()",
         });
         return a;
-        break;
 
     case 3:
         a.assign({
@@ -67,7 +65,6 @@ vector<string> sillySolution(int n)
             "()()()",
         });
         return a;
-        break;
 
     case 4:
         a.assign({
@@ -87,7 +84,6 @@ vector<string> sillySolution(int n)
             "()()()()",
         });
         return a;
-        break;
 
     case 5:
         a.assign({
@@ -135,7 +131,6 @@ vector<string> sillySolution(int n)
             "()()()()()",
         });
         return a;
-        break;
 
     case 6:
         a.assign({
@@ -273,7 +268,6 @@ vector<string> sillySolution(int n)
             "()()()()()()",
         });
         return a;
-        break;
 
     case 7:
         a.assign({
@@ -708,7 +702,6 @@ vector<string> sillySolution(int n)
             "()()()()()()()",
         });
         return a;
-        break;
 
     case 8:
         a.assign({
@@ -2144,7 +2137,6 @@ vector<string> sillySolution(int n)
             "()()()()()()()()",
         });
         return a;
-        break;
     }
 }
 
