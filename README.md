@@ -19,3 +19,5 @@ cin.tie(NULL);
 ```
 
 - This unties `cin` from `cout` and speeds up execution
+
+- In vectors `ans.emplace_back(val)` is faster than `ans.push_back(val)`
