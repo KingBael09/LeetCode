@@ -56,19 +56,18 @@ void sortColorsOK(vector<int> &nums)
     }
 }
 
-// Algorithm: Dutch National Flag
-
 /**
+ * ## Algorithm: Dutch National Flag
  * Dutch National Flag algorithm is used for three way partitoning of array which has three distinct values
  *
- *  Here three pointers are maintained -> low points to begning of array, high points to end of array,
- *  mid starts at begining and moves through it
+ * Here three pointers are maintained -> low points to begning of array, high points to end of array,
+ * mid starts at begining and moves through it
  *
- *  The idea is that all 2's after high pointer, all the 1's between high and low pointer
- *  algorightm moves the mid pointer through the array comparing the values at each position comparing with 1.
- *  If the value is 0 the element is swapped with low ponter and low pointer and mid pointer are incremented.
- *  If the value is 2 the element is swapped with high pointer and high pointer is decremented.
- *  If the value is 1 the mid pointer is simply incremented.
+ * - The idea is that all 2's after high pointer, all the 1's between high and low pointer
+ * - algorithm moves the mid pointer through the array comparing the values at each position comparing with 1.
+ * - If the value is 0 the element is swapped with low ponter and low pointer and mid pointer are incremented.
+ * - If the value is 2 the element is swapped with high pointer and high pointer is decremented.
+ * - If the value is 1 the mid pointer is simply incremented.
  */
 void sortColors(vector<int> &nums)
 {
