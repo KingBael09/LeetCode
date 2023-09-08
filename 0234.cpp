@@ -35,6 +35,7 @@ ListNode *reverseList(ListNode *head)
     return head;
 }
 
+// In this we go to middle of the list then from ther on we reverse the second half of the list and then we compare both the halves
 bool isPalindrome(ListNode *head)
 {
     if (head == NULL)
