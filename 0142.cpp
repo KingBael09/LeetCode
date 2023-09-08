@@ -15,8 +15,10 @@ struct ListNode
 };
 
 /**
- * ### Algorithm: Floyd's Cycle Finding Algorithm
- * This algorithm uses two pointers
+ * ### Algorithm: Floyd's tortoise and hare cycle finding algorithm
+ * This algorithm uses two pointers to find the presence of cycle
+ * then point one of the pointer to the start of the list iterate both of the pointers
+ * at same speed until they meet, they will meet at the start of the cycle (i don know why though)
  *
  */
 ListNode *detectCycle(ListNode *head)
