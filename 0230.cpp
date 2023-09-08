@@ -19,7 +19,7 @@ struct TreeNode
 
 vector<int> v;
 
-void inorder(struct TreeNode *TreeNode)
+void inorder(TreeNode *TreeNode)
 {
     if (!TreeNode)
     {
@@ -38,11 +38,33 @@ int kthSmallest(TreeNode *root, int k)
     return v[k - 1];
 }
 
-// TODO: Think of a solution in which if the `k` becomes zero return the vector and stop furter recursion using boolean maybe
+// Below method doesn't use a vector
+
+int ans = 0;
+
+void inorderBetter(TreeNode *root, int &k)
+{
+    if (!root)
+        return;
+
+    inorderBetter(root->left, k);
+    if (--k == 0)
+    {
+        ans = root->val;
+    }
+    inorderBetter(root->right, k);
+}
+
+int kSmol(TreeNode *root, int k)
+{
+    inorderBetter(root, k);
+    return ans;
+}
 
 int main()
 {
     TreeNode *root = new TreeNode(3, new TreeNode(1, nullptr, new TreeNode(2)), new TreeNode(4));
 
-    cout << kthSmallest(root, 1);
+    cout << kSmol(root, 1);
+    // cout << kthSmallest(root, 1);
 }
