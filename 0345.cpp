@@ -7,13 +7,18 @@
 
 using namespace std;
 
+bool isVowel(char &c)
+{
+    return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U';
+}
+
 // This really is a bad method
 string reverseVowelsBad(string s)
 {
     stack<char> d;
     for (auto i : s)
     {
-        if (i == 'a' || i == 'e' || i == 'i' || i == 'o' || i == 'u' || i == 'A' || i == 'E' || i == 'I' || i == 'O' || i == 'U')
+        if (isVowel(i))
         {
             d.push(i);
         }
@@ -21,7 +26,7 @@ string reverseVowelsBad(string s)
 
     for (int i = 0; i < s.size(); i++)
     {
-        if (s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u' || s[i] == 'A' || s[i] == 'E' || s[i] == 'I' || s[i] == 'O' || s[i] == 'U')
+        if (isVowel(s[i]))
         {
             s[i] = d.top();
             d.pop();
@@ -29,11 +34,6 @@ string reverseVowelsBad(string s)
     }
 
     return s;
-}
-
-bool isVowel(char &c)
-{
-    return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U';
 }
 
 // this could be improved
