@@ -33,4 +33,6 @@ cin.tie(NULL);
 
 - In vectors `ans.emplace_back(val)` is faster than `ans.push_back(val)` but it takes more memory, `emplace_back` constructs the object to insert this is useful when the object is expensive to copy, `push_back` should be used when the object which has to be inserted is cheap to copy or you already have the copy of the object.
 
+- SQL is hard
+
 [^1]: source: [GFG](https://www.geeksforgeeks.org/fast-io-for-competitive-programming/)
