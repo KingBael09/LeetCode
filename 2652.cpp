@@ -1,5 +1,6 @@
 // ? 2652. Sum Multiples
 // ? https://leetcode.com/problems/sum-multiples/description/
+
 #include <iostream>
 #include <bits/stdc++.h>
 #include <string>
@@ -19,4 +20,9 @@ int sumOfMultiples(int n)
     }
 
     return res;
+}
+
+int main()
+{
+    // Too lazy to write code
 }
