@@ -8,3 +8,8 @@ temp*.cpp
 _extra_*.cpp
 
 /workspace
+
+tsconfig.tsbuildinfo
+
+*.js
+# No JS File allowed use TS

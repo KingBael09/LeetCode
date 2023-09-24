@@ -29,7 +29,7 @@ void helper(int idx, vector<int> &nums, vector<int> &ds)
     helper(idx + 1, nums, ds);
 }
 
-// Very very bad solution
+// Very very bad solution basically bruteforce
 vector<vector<int>> subsetsWithDup(vector<int> &nums)
 {
 
@@ -44,12 +44,38 @@ vector<vector<int>> subsetsWithDup(vector<int> &nums)
     return ans;
 }
 
-// TODO: Think of a better solution
+// Better Solution
+
+void betterHelper(int idx, vector<int> &nums, vector<int> &ds)
+{
+    ans.push_back(ds);
+    for (int i = idx; i < nums.size(); i++)
+    {
+        if (i != idx && nums[i] == nums[i - 1])
+        {
+            continue;
+        }
+        ds.push_back(nums[i]);
+        betterHelper(i + 1, nums, ds);
+        ds.pop_back();
+    }
+
+    return;
+}
+
+vector<vector<int>> subsetsWithDupBetter(vector<int> &nums)
+{
+    vector<int> ds;
+    sort(nums.begin(), nums.end());
+    betterHelper(0, nums, ds);
+
+    return ans;
+}
 
 int main()
 {
     vector<int> nums = {1, 2, 2};
-    for (auto i : subsetsWithDup(nums))
+    for (auto i : subsetsWithDupBetter(nums))
     {
         for (auto j : i)
         {
