@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM"],
+    "allowJs": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "verbatimModuleSyntax": true,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleDetection": "force",
+
+    "strict": true,
+    "strictNullChecks": true,
+    "noUncheckedIndexedAccess": true,
+
+    "moduleResolution": "NodeNext",
+    "module": "NodeNext",
+
+    "removeComments": true,
+    "allowUnreachableCode": false,
+    "alwaysStrict": true,
+    "incremental": true,
+    "outDir": "./workspace/scripts",
+    "baseUrl": "./"
+  },
+  "compileOnSave": true
+}
