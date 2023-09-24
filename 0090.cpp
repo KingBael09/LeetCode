@@ -51,13 +51,12 @@ void betterHelper(int idx, vector<int> &nums, vector<int> &ds)
     ans.push_back(ds);
     for (int i = idx; i < nums.size(); i++)
     {
-        if (i != idx && nums[i] == nums[i - 1])
+        if (i == idx || nums[i] != nums[i - 1])
         {
-            continue;
+            ds.push_back(nums[i]);
+            betterHelper(i + 1, nums, ds);
+            ds.pop_back();
         }
-        ds.push_back(nums[i]);
-        betterHelper(i + 1, nums, ds);
-        ds.pop_back();
     }
 
     return;
