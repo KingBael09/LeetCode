@@ -48,7 +48,7 @@ int countNodes(TreeNode *root)
     }
 
     int count = 1 + countNodes(root->left) + countNodes(root->right);
-    root->left = nullptr, root->right = nullptr; // this just removes the reference to the node;
+    root->left = nullptr, root->right = nullptr; // this just removes the reference to the node
 
     return count;
 }
