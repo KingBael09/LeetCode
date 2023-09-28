@@ -82,6 +82,8 @@ void helper(int col, vector<string> &board, int size)
     }
 }
 
+// TODO: There is better method for checking isSafe
+
 vector<vector<string>> solveNQueens(int n)
 {
     vector<string> board(n, string(n, '.'));
