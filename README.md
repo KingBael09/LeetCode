@@ -11,10 +11,11 @@ This is my leetcode solutions
 - For speed-up use:
 
 ```cpp
-static const int _ = []() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    return 0;
+static auto _ = []() {
+  std::ios_base::sync_with_stdio(false);
+  std::cin.tie(nullptr);
+  std::cout.tie(nullptr);
+  return 0;
 }();
 
 ```
