@@ -2,8 +2,7 @@
 
 *.exe
 
-temp*.cpp
-*.incomplete.cpp
+*.incomplete.*
 
 _extra_*.cpp
 
