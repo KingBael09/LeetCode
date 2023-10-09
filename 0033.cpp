@@ -23,7 +23,6 @@ int search(vector<int> &nums, int target)
     return res;
 }
 
-// TODO: O(log(N)) solution incomplete
 int searchFaster(vector<int> &nums, int target)
 {
     int start = 0;
