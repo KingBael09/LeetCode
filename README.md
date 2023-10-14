@@ -36,4 +36,24 @@ cin.tie(NULL);
 
 - SQL is hard
 
+- Function `next_permutaton` is a damn good, similarly `prev_premutation`
+
+```cpp
+vector<int> nums{1, 2, 3};
+
+next_permutation(nums.begin(), nums.end());
+
+// nums=> 1, 3, 2
+```
+
+- Function `iota` assigns sucessive values to elements
+
+```cpp
+vector<int> nums(5);
+
+iota(nums.begin(), nums.end(), 1);
+
+// nums => 1, 2, 3, 4, 5
+```
+
 [^1]: source: [GFG](https://www.geeksforgeeks.org/fast-io-for-competitive-programming/)
