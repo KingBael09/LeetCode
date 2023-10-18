@@ -85,6 +85,47 @@ public:
     }
 };
 
+class BetterIterator
+{
+private:
+    stack<TreeNode *> st;
+
+    void partialTraverse(TreeNode *root)
+    {
+        if (!root)
+        {
+            return;
+        }
+        st.push(root);
+        partialTraverse(root->left);
+    }
+
+public:
+    BetterIterator(TreeNode *root)
+    {
+        partialTraverse(root);
+    }
+
+    int next()
+    {
+        if (st.empty())
+        {
+            return -1;
+        }
+
+        TreeNode *curr = st.top();
+        st.pop();
+
+        partialTraverse(curr->right);
+        return curr->val;
+    }
+
+    bool hasNext()
+    {
+        return !st.empty();
+    }
+};
+
 int main()
 {
 }
