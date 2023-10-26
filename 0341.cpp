@@ -40,6 +40,7 @@ private:
             {
                 auto li = ni.getList();
                 flattinator(li);
+
                 // flattinator(ni.getList()); // This complains about not being refrence but takes less memory as is
             }
         }
