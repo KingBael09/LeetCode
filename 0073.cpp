@@ -29,6 +29,7 @@ void setZeroes(vector<vector<int>> &matrix)
     }
 }
 
+// This takes O(m+n) space
 void setZerosBetter(vector<vector<int>> &matrix)
 {
     int rows = matrix.size();
@@ -59,7 +60,7 @@ void setZerosBetter(vector<vector<int>> &matrix)
     }
 }
 
-// TODO: Still some optimizations can be made
+// TODO: Still some optimizations can be made to O(1) space
 
 int main()
 {
