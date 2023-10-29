@@ -34,5 +34,4 @@ bool isSameTree(TreeNode *p, TreeNode *q)
 
 int main()
 {
-    // too lazy to write driver code
 }
