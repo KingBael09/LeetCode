@@ -9,22 +9,26 @@ using namespace std;
 
 namespace fs = filesystem;
 
-unordered_set<fs::path> path_check_ignore_list = {"./utils.cpp"};
+unordered_set<fs::path> file_check_ignore_list = {"./utils.cpp"};
+unordered_set<fs::path> file_check_extensions = {".cpp", ".ts"};
 
-void path_checker(fs::path path)
+void file_checker(fs::path path)
 {
+    vector<string> errors;
+
     for (const auto &entry : fs::directory_iterator(path))
     {
-        if (!entry.is_directory() && (entry.path().extension() == ".cpp" || entry.path().extension() == ".ts"))
-        {
-            auto path = entry.path();
+        auto pathname = entry.path();
 
-            if (path_check_ignore_list.find(path) != path_check_ignore_list.end())
+        if (!entry.is_directory() && file_check_extensions.find(pathname.extension()) != file_check_extensions.end())
+        {
+
+            if (file_check_ignore_list.find(pathname) != file_check_ignore_list.end())
             {
                 continue;
             }
 
-            auto filename = path.filename().generic_string();
+            auto filename = pathname.filename().generic_string();
 
             if (filename.find(".incomplete.") != string::npos)
             {
@@ -33,7 +37,7 @@ void path_checker(fs::path path)
 
             ifstream file;
 
-            file.open(path);
+            file.open(pathname);
 
             string line;
 
@@ -47,23 +51,39 @@ void path_checker(fs::path path)
 
                 if (!(line == "// ?"))
                 {
-                    cout << path.generic_string() << " -> ";
+
+                    string error = pathname.generic_string() + " -> ";
+
                     if (line_count == 0)
                     {
-                        cout << "Link Missing" << endl;
+                        error += "Link Missing";
                     }
                     else if (line_count == 1)
                     {
-                        cout << "Name Missing" << endl;
+                        error += "Name Missing";
                     }
                     else
                     {
-                        cout << "Something went wrong" << endl;
+                        error += "Something went wrong";
                     }
+
+                    errors.push_back(error);
                 }
             }
 
             file.close();
+        }
+    }
+
+    if (errors.empty())
+    {
+        cout << "No Errors" << endl;
+    }
+    else
+    {
+        for (auto err : errors)
+        {
+            cout << err << endl;
         }
     }
 }
@@ -80,5 +100,5 @@ void remove_exe(fs::path path)
 
 int main()
 {
-    path_checker("./");
+    file_checker("./");
 }
