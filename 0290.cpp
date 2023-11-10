@@ -10,7 +10,6 @@ using namespace std;
 bool wordPattern(string pattern, string s)
 {
     stringstream ss(s);
-    string str;
 
     unordered_map<string, char> mp;
     unordered_map<char, string> mp2;
@@ -19,9 +18,10 @@ bool wordPattern(string pattern, string s)
 
     int pos = 0;
 
-    while (ss >> str)
+    string word;
+    while (ss >> word)
     {
-        words.push_back(str);
+        words.push_back(word);
     }
 
     if (words.size() != pattern.size())
@@ -31,25 +31,18 @@ bool wordPattern(string pattern, string s)
 
     for (auto &word : words)
     {
-        if (mp.find(word) != mp.end())
+        if (mp.find(word) != mp.end() && mp[word] != pattern[pos])
         {
-            if (mp[word] != pattern[pos])
-            {
-                return false;
-            }
+            return false;
         }
-        if (mp2.find(pattern[pos]) != mp2.end())
+        if (mp2.find(pattern[pos]) != mp2.end() && mp2[pattern[pos]] != word)
         {
-            if (mp2[pattern[pos]] != word)
-            {
-                return false;
-            }
+            return false;
         }
-        else
-        {
-            mp[word] = pattern[pos];
-            mp2[pattern[pos]] = word;
-        }
+
+        mp[word] = pattern[pos];
+        mp2[pattern[pos]] = word;
+
         pos++;
     }
 
