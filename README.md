@@ -65,4 +65,23 @@ This is my leetcode solutions
   
   ```
 
+- In MYSQL `OFFSET` can be written as
+
+  ```sql
+  SELECT * FROM table_name
+  LIMIT offset_val, limit_val
+  ```
+
+- In MYSQL to set a variable to new value use `SET`
+
+  ```sql
+  CREATE FUNCTION foo(N INT) RETURNS INT
+  BEGIN
+  SET N = N - 1;
+  RETURN (
+    <!-- Your function here -->
+  );
+  END
+  ```
+  
 [^1]: source: [GFG](https://www.geeksforgeeks.org/fast-io-for-competitive-programming/)
