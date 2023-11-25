@@ -58,7 +58,7 @@ TreeNode *sortedListToBST_Works_but_Wasteful(ListNode *head)
     return createTree(nums, 0, nums.size() - 1);
 }
 
-TreeNode *sortedListToBST(ListNode *head)
+TreeNode *sortedListToBST_Wierd(ListNode *head)
 {
     if (!head)
     {
@@ -87,18 +87,18 @@ TreeNode *sortedListToBST(ListNode *head)
 
     if (slow != head)
     {
-        root->left = sortedListToBST(head);
+        root->left = sortedListToBST_Wierd(head);
     }
     else
     {
         root->right = nullptr;
     }
-    root->right = sortedListToBST(slow->next);
+    root->right = sortedListToBST_Wierd(slow->next);
 
     return root;
 }
 
-TreeNode *sortedListToBST_Smaller(ListNode *head)
+TreeNode *sortedListToBST(ListNode *head)
 {
     if (!head)
     {
