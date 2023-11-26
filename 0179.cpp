@@ -41,4 +41,6 @@ string largestNumber(vector<int> &nums)
 
 int main()
 {
+    vector<int> nums{3, 30, 34, 5, 9};
+    cout << largestNumber(nums);
 }
