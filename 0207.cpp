@@ -20,8 +20,6 @@ bool canFinish(int numCourses, vector<vector<int>> &prerequisites)
 
     deque<int> no_deps_course;
 
-    vector<int> visited(numCourses, 0);
-
     // push courses which don't have any prereno_deps_courseuisites
     for (int idx = 0; idx < numCourses; idx++)
     {
