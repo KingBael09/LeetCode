@@ -32,6 +32,32 @@ int minCost(string colors, vector<int> &neededTime)
     return time;
 }
 
+int minCostBetter(string colors, vector<int> &neededTime)
+{
+    int prev = 0;
+    int time = 0;
+
+    for (int next = 1; next < colors.size(); next++)
+    {
+        if (colors[prev] != colors[next])
+        {
+            prev = next;
+            continue;
+        }
+
+        int increment = min(neededTime[prev], neededTime[next]);
+
+        if (neededTime[prev] == increment)
+        {
+            prev = next;
+        }
+
+        time += increment;
+    }
+
+    return time;
+}
+
 int main()
 {
 }
