@@ -6,6 +6,8 @@ This is my leetcode solutions
 
 ## Findings
 
+### CPP
+
 - Deque is faster than Queue in CPP.
 
 - For speed-up use:
@@ -64,6 +66,20 @@ This is my leetcode solutions
   int mid = low + (high - low) / 2;
   
   ```
+
+- To have custom comparison in `priority_queue` with lambda functions
+
+  ```cpp
+  auto compare = [](const Node a, const Node b){
+    // comparison here
+    return a->val > b->val;
+  };
+  
+  priority_queue<Node, vector<Node>, decltype(compare)> pq;
+
+  ```
+
+### SQL
 
 - In MYSQL `OFFSET` can be written as
 
