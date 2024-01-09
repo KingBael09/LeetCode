@@ -22,7 +22,7 @@
     "alwaysStrict": true,
     "incremental": true,
     // "outDir": "./workspace/scripts",
-    "outDir": "../.workspace/scripts",
+    "outDir": "./.workspace/scripts",
     "baseUrl": "./"
   },
   "compileOnSave": true
