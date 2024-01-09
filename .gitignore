@@ -6,7 +6,7 @@
 
 _extra_*.cpp
 
-/workspace
+/.workspace
 
 tsconfig.tsbuildinfo
 
