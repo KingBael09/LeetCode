@@ -12,3 +12,7 @@ tsconfig.tsbuildinfo
 
 *.js
 # No JS File allowed use TS
+
+# Added by cargo
+
+/target
