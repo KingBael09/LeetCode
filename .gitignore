@@ -16,3 +16,4 @@ tsconfig.tsbuildinfo
 # Added by cargo
 
 /target
+*pdb
