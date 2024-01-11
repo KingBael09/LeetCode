@@ -6,6 +6,10 @@ This is my leetcode solutions
 
 ## Findings
 
+### Rust
+
+- Rust is hard
+
 ### CPP
 
 - Deque is faster than Queue in CPP.
