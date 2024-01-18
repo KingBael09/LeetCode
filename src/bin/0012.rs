@@ -24,4 +24,18 @@ pub fn int_to_roman(mut num: i32) -> String {
         })
         .collect()
 }
+
+pub fn int_to_roman_other(mut num: i32) -> String {
+    let mut result = String::new();
+
+    for (s, val) in UNITS.iter() {
+        while num >= *val {
+            num -= val;
+            result += s
+        }
+    }
+
+    result
+}
+
 fn main() {}
