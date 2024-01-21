@@ -8,6 +8,9 @@ pub fn four_sum(mut nums: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
     let mut set = HashSet::new();
 
     for i in 0..n {
+        if i != 0 && nums[i] == nums[i - 1] {
+            continue;
+        }
         for j in i + 1..n {
             for k in j + 1..n {
                 let sum = 0_i32
