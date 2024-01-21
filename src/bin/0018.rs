@@ -13,21 +13,14 @@ pub fn four_sum(mut nums: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
         }
         for j in i + 1..n {
             for k in j + 1..n {
-                let sum = 0_i32
-                    .saturating_add(nums[i])
-                    .saturating_add(nums[j])
-                    .saturating_add(nums[k]);
+                let l_val = target
+                    .saturating_sub(nums[i])
+                    .saturating_sub(nums[j])
+                    .saturating_sub(nums[k]);
 
-                let l_val = target - sum;
-
-                let res = match nums[k + 1..].binary_search(&l_val) {
-                    Ok(x) => Some(x),
-                    Err(_) => None,
-                };
-
-                if res.is_some() {
+                if nums[k + 1..].binary_search(&l_val).is_ok() {
                     set.insert(vec![nums[i], nums[j], nums[k], l_val]);
-                }
+                };
             }
         }
     }
