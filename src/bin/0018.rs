@@ -12,6 +12,9 @@ pub fn four_sum(mut nums: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
             continue;
         }
         for j in i + 1..n {
+            if j > i + 1 && nums[j] == nums[j - 1] {
+                continue;
+            }
             for k in j + 1..n {
                 let l_val = target
                     .saturating_sub(nums[i])
