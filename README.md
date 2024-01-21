@@ -10,6 +10,22 @@ This is my leetcode solutions
 
 - Rust is hard
 
+- Double ended iterators are very useful for manual binary search
+
+  ```rs
+  let v = vec![1,2,3,4,5,6];
+  let mut iter = v.iter();
+
+  let (mut left, mut right) = (iter.next(), iter.next_back());
+
+  while (Some(l), Some(r)) = (left, right){
+    // will yield values (1,6), (2,5) ...
+    left = iter.next();
+    right = iter.next_back();
+  }
+
+  ```
+
 ### CPP
 
 - Deque is faster than Queue in CPP.
