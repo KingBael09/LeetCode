@@ -18,7 +18,7 @@ This is my leetcode solutions
 
   let (mut left, mut right) = (iter.next(), iter.next_back());
 
-  while (Some(l), Some(r)) = (left, right){
+  while let (Some(l), Some(r)) = (left, right){
     // will yield values (1,6), (2,5) ...
     left = iter.next();
     right = iter.next_back();
