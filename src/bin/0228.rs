@@ -1,8 +1,8 @@
-fn update(a: i32, b: i32, v: &mut Vec<String>) {
-    v.push(if a == b {
-        format!("{a}")
+fn update(prev: i32, curr: i32, ans: &mut Vec<String>) {
+    ans.push(if prev == curr {
+        format!("{prev}")
     } else {
-        format!("{a}->{b}")
+        format!("{prev}->{curr}")
     });
 }
 
@@ -10,17 +10,17 @@ pub fn summary_ranges(nums: Vec<i32>) -> Vec<String> {
     let mut ans = Vec::new();
 
     if !nums.is_empty() {
-        let mut a = nums[0];
-        let mut b = nums[0];
+        let mut prev = nums[0];
+        let mut curr = nums[0];
 
         for i in nums[1..].iter() {
-            if b + 1 != *i {
-                update(a, b, &mut ans);
-                a = *i;
+            if curr + 1 != *i {
+                update(prev, curr, &mut ans);
+                prev = *i;
             }
-            b = *i
+            curr = *i
         }
-        update(a, b, &mut ans);
+        update(prev, curr, &mut ans);
     }
 
     ans
