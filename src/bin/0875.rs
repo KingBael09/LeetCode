@@ -9,13 +9,13 @@ pub fn min_eating_speed(piles: Vec<i32>, h: i32) -> i32 {
     while left <= right {
         let mid = left + (right - left) / 2;
 
-        let mut hr = 0;
+        let mut hr: i64 = 0;
 
         for bananas in piles.iter() {
-            hr += (bananas + mid - 1) / mid;
+            hr += ((bananas + mid - 1) / mid) as i64;
         }
 
-        if hr <= h {
+        if hr <= h as i64 {
             ans = cmp::min(ans, mid);
 
             right = mid - 1
@@ -36,11 +36,11 @@ pub fn min_eating_speed_smaller(piles: Vec<i32>, h: i32) -> i32 {
     while left <= right {
         let mid = left + (right - left) / 2;
 
-        let hr = piles
-            .iter()
-            .fold(0, |total, bananas| total + ((bananas + mid - 1) / mid));
+        let hr = piles.iter().fold(0_i64, |total, bananas| {
+            total + ((bananas + mid - 1) / mid) as i64
+        });
 
-        match hr.cmp(&h) {
+        match hr.cmp(&(h as i64)) {
             Ordering::Greater => left = mid + 1,
             _ => {
                 ans = cmp::min(ans, mid);
@@ -52,4 +52,9 @@ pub fn min_eating_speed_smaller(piles: Vec<i32>, h: i32) -> i32 {
     ans
 }
 
-fn main() {}
+fn main() {
+    let v = [805306368, 805306368, 805306368];
+    let h = 1000000000;
+
+    println!("{}", min_eating_speed(v.to_vec(), h))
+}
