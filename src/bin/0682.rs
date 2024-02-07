@@ -1,5 +1,5 @@
 pub fn cal_points(operations: Vec<String>) -> i32 {
-    let mut res: Vec<i32> = Vec::new();
+    let mut res = Vec::new();
 
     for str in operations.iter() {
         match str.as_str() {
