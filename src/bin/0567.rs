@@ -51,9 +51,13 @@ pub fn check_inclusion_slow_but_clean(s1: String, s2: String) -> bool {
             if let Some(f) = clone.get_mut(c) {
                 *f -= 1;
 
-                if (*f).eq(&0) {
+                if 0.eq(f) {
                     clone.remove(c);
                 }
+
+                // if (*f).eq(&0) {
+                //     clone.remove(c);
+                // }
             }
         });
 
