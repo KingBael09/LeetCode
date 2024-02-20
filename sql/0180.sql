@@ -9,7 +9,7 @@ where l1.num = l2.num
 ;
 ;
 ;
--- Other solution
+-- same solution but more readable
 ;
 select distinct a.num ConsecutiveNums
 from logs a
