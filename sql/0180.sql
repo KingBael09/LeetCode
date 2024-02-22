@@ -7,7 +7,6 @@ where l1.num = l2.num
     and l2.id = l1.id + 1
     and l3.id = l1.id + 2;
 ;
-;
 -- same solution but more readable
 ;
 select distinct a.num ConsecutiveNums
